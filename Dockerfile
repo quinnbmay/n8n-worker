@@ -1,3 +1,6 @@
 FROM n8nio/n8n:latest
 
-CMD ["n8n", "worker"]
+COPY start-worker.sh /start-worker.sh
+RUN chmod +x /start-worker.sh
+
+CMD ["/start-worker.sh"]
